@@ -1,0 +1,13 @@
+<app-product-modal *ngIf="this.displayModal" [product]="selectedProduct" (removeModal)="removeModal()"></app-product-modal>
+	<h3 class="title">{{this.title}}</h3>
+	<div class="row padding-row-top">
+		<div *ngFor="let elem of productArray" class="col-md-4">
+			<div class="card" (click)="clickProduct(elem.id)">
+				<div class="card-header"><h4 class="card-title">{{elem.name}}</h4></div>
+				<div class="card-body">
+					<img src="{{elem.imgUrl}}">
+				</div> 
+				<div class="card-footer">{{elem.desc}}</div>
+			</div>
+		</div>
+	</div>

@@ -1,0 +1,16 @@
+<div>
+	<div *ngFor="let elem of cartArray" class="row line-product" style="">
+		<div class="col-md-4"><img src="{{elem.product.imgUrl}}"/></div>
+		<div class="col-md-8">
+			<h4>{{elem.product.name}}</h4>
+			<div>{{elem.product.desc}}</div>
+			<div>
+				<label>Amount of loads</label>
+				<div>{{elem.quantity}}</div>
+			</div>
+			<div>
+				<button type="button" (click)="removeFromCart(elem.product.id)" class="btn btn-secondary">Remove from cart</button>
+			</div>
+		</div>
+	</div>
+</div>

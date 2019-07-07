@@ -1,0 +1,17 @@
+<div class="container padding-top">
+	<div class="cart-main-container">
+		<div *ngIf="this.cartArray.length === 0" class="cart-element">
+			<h3>Delivery Cart</h3>
+			<div class="tab">Your cart is empty</div>
+		</div>
+		<div *ngIf="this.cartArray.length > 0">
+			<div class="cart-header">
+				<h3>Delivery Cart</h3>
+			</div>
+			<!-- <app-cart-total *ngIf="this.cartArray.length > 0"></app-cart-total> -->
+			<div class="cart-displayer-spacing">
+			<app-cart-displayer-line *ngIf="this.cartArray.length > 0" ></app-cart-displayer-line>
+			</div>
+		</div>
+	</div>
+</div>

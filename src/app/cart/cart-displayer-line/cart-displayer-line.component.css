@@ -1,0 +1,20 @@
+img{
+	width: 95%;
+	height: 95% ;
+	margin: 2px;
+	display:block;
+	user-drag: none; 
+	user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-webkit-user-select: none;
+	-ms-user-select: none;
+}
+
+.line-product {
+	background-color: white;
+	border-bottom: 3px solid #b5b5b5;
+	padding: 15px 2px;
+	margin: 0px 0px;
+}
+

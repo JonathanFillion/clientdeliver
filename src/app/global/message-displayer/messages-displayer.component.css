@@ -1,0 +1,19 @@
+.message-container {
+	background-color: white;
+	opacity: 1;
+	border-bottom: 2px solid #b5b5b5;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-radius: 5px;
+}
+
+.title {
+	background-color: white;
+	opacity: 1;
+	border-bottom: 2px solid #b5b5b5;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-radius: 10px;
+}
+
+

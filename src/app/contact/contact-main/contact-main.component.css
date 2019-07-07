@@ -1,0 +1,28 @@
+
+.contact-container {
+	background-color: white;
+	opacity: 1;
+	border-bottom: 2px solid #b5b5b5;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-radius: 5px;
+}
+
+.contact-main-container {
+	background-color: rgba(52, 58, 64, 0.65);
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.padding-top {
+	padding-top: 90px;
+}
+
+.title {
+	background-color: white;
+	opacity: 1;
+	border-bottom: 2px solid #b5b5b5;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-radius: 10px;
+}

@@ -1,0 +1,48 @@
+.padding-top {
+	padding-top: 90px;
+}
+
+.padding-col-bottom {
+	padding-bottom: 15px;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	display:block;
+}
+
+.cart-main-container {
+	background-color: rgba(52, 58, 64, 0.65);
+	padding: 10px;
+	border-radius: 3px;
+}
+
+.cart-element {
+	background-color: white;
+	opacity: 1;
+	border-bottom: 2px solid #b5b5b5;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-radius: 10px;
+}
+
+h3 {
+	padding-left: 3px;
+}
+
+.tab {
+	padding-left: 10px;
+}
+
+.cart-displayer-spacing {
+	padding-top: 10px;
+}
+
+.cart-header {
+	background-color: #ffffff;
+	border-radius: 10px;
+	padding: 15px 4px;
+	margin: 10px 2px;
+	border-bottom: 2px solid #b5b5b5;
+}

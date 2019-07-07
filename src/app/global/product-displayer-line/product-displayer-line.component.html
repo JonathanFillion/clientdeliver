@@ -1,0 +1,18 @@
+<!-- <app-product-modal *ngIf="this.displayModal" [product]="selectedProduct" (removeModal)="removeModal()"></app-product-modal> -->
+
+<div>
+	<div *ngFor="let elem of productArray" class="row line-product">
+		<div class="col-md-4"><img src="{{elem.imgUrl}}"/></div>
+		<div class="col-md-8">
+			<h4>{{elem.name}}</h4>
+			<div>{{elem.desc}}</div>
+			<div>
+				<label>Amount of loads</label>
+				<select class="md-form mdb-select colorful-select dropdown-primary" (change)="quantityChange(elem.id, $event)">
+					<option *ngFor="let pr of elem.prices.split(';'); let i = index;">{{i + 1}} / {{pr}}$</option>
+				</select>
+			</div>
+			<div><button class="btn btn-outline-primary" (click)="orderProduct(elem.id)">Order</button></div>
+		</div>
+	</div>
+</div>

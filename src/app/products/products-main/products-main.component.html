@@ -1,0 +1,11 @@
+<div class="container padding-top">
+	<div class="product-display-container">
+	<h3 class="title">Products</h3>
+		<app-category-selector (categorySelected)="setCategory($event)"></app-category-selector>
+		<div *ngIf="this.selectedCategory">
+			<app-products-navigation [categoryId]="this.selectedCategory.id" (newFilter)="setFilter($event)"></app-products-navigation>
+			<app-product-displayer-line [productArray]="this.products"></app-product-displayer-line>
+		</div>
+
+	</div>
+</div>

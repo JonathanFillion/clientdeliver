@@ -1,0 +1,19 @@
+.bold {
+	font-weight: bold;
+}
+.container {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: 100%;
+}
+
+.sticky-header {
+	position: fixed;
+  	top: 0;
+  	width: 100%;
+  	z-index: 10;
+}
+
+.wider-input {
+	width: 350px;
+}

@@ -1,0 +1,14 @@
+
+<nav class="navbar navbar-expand-lg navbar-light product-navigation" style="">
+
+    <div class="collapse navbar-collapse" >
+     <ul class="navbar-nav mr-auto">
+        <li class="nav-item" [ngClass]="{'active': this.filter == -1}">
+          <a class="nav-link" (click)="triggerFilter(-1)">All</a>
+        </li>
+        <li *ngFor="let cat of subCategories; let i = index;" class="nav-item" [ngClass]="{'active': this.filter == cat.id}">
+          <a class="nav-link" (click)="triggerFilter(cat.id)">{{cat.name}} + {{cat.id}}</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
