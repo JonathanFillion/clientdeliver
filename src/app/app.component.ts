@@ -39,7 +39,6 @@ export class AppComponent {
 		this.elementRef.nativeElement.ownerDocument.body.style.backgroundPosidtion = "center";
 		this.elementRef.nativeElement.ownerDocument.body.style.height = "100%";
 		this.elementRef.nativeElement.ownerDocument.body.style.width = "100%";
-		console.log(this.elementRef.nativeElement.ownerDocument.body.style)
 
 	}
 

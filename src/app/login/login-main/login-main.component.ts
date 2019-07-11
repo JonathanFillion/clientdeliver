@@ -9,7 +9,7 @@ import { AuthenticationService } from '../../services/authentication-service/aut
 })
 export class LoginMainComponent implements OnInit {
 
-  username = 'javainuse'
+  username = ''
   password = ''
   invalidLogin = false
 
@@ -19,13 +19,19 @@ export class LoginMainComponent implements OnInit {
   ngOnInit() {
   }
 
-  checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate([''])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+ checkLogin() {
+    (this.loginservice.authenticate(this.username, this.password).subscribe(
+      data => {
+        this.router.navigate([''])
+        this.invalidLogin = false
+      },
+      error => {
+        this.invalidLogin = true
+
+      }
+    )
+    );
+
   }
 
 }

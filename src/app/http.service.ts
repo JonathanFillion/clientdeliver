@@ -3,7 +3,7 @@ import { Product } from './classes/product';
 import { Category } from './classes/category';
 import { SubCategory } from './classes/sub-category';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { map, catchError, tap, debounceTime } from 'rxjs/operators';
 
@@ -21,6 +21,7 @@ export class HttpService {
 	categories : Category[] = [{name:"Topsoil", id:0},{name:"Rock", id:1},{name:"Sand", id:2},{name:"Wood", id:3},{name:"Weed", id:4}];
 
 	subCategories : Category[];
+
 
 	getProducts(): Observable<Product[]> {
 		return this.http.get<Product[]>(this.url + "/api/products")

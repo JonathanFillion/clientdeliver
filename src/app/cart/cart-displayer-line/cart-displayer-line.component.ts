@@ -15,7 +15,6 @@ export class CartDisplayerLineComponent implements OnInit {
 
   ngOnInit() {
     this.cartArray = this.cartService.getCartItems();
-    console.log(this.cartArray);
   }
 
   removeFromCart(id: number){

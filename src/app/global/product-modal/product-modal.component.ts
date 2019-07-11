@@ -17,7 +17,6 @@ export class ProductModalComponent implements OnInit {
    }
 
   ngOnInit() {
-    console.log(this.product)
   }
 
   clickExit() {

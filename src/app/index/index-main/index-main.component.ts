@@ -19,7 +19,6 @@ export class IndexMainComponent implements OnInit {
 
   ngOnInit() {
    this.httpService.getProducts().subscribe((data : Product[]) => {
-     console.log(data)
       this.products = data.slice(0,3);
     });
   }
