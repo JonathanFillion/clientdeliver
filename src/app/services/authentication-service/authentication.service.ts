@@ -5,7 +5,7 @@ import { map } from 'rxjs/operators';
 
 
 export class User {
-  constructor(public status:string) {}
+	constructor(public status:string) {}
 }
 
 @Injectable({
@@ -13,10 +13,10 @@ export class User {
 })
 export class AuthenticationService {
 
-	constructor(private httpClient : HttpClient) { }
+	constructor(private httpClient : HttpClient, private httpService : HttpService) { }
 
 	authenticate(username, password) {
-		const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
+/*	const headers = new HttpHeaders({ Authorization: 'Basic ' + btoa(username + ':' + password) });
     return this.httpClient.get<User>('http://localhost:8080/validateLogin', {headers}).pipe(
      map(userData => {
     		sessionStorage.setItem('username',username);
@@ -25,15 +25,17 @@ export class AuthenticationService {
         return userData;
        }
      )
-    );
-  }
+   );
+   */
+   this.httpService.testAuth(username, password);
+ }
 
-	isUserLoggedIn() {
-		let user = sessionStorage.getItem('username')
-		return !(user === null)
-	}
+ isUserLoggedIn() {
+ 	let user = sessionStorage.getItem('username')
+ 	return !(user === null)
+ }
 
-	logOut() {
-		sessionStorage.removeItem('username')
-	}
+ logOut() {
+ 	sessionStorage.removeItem('username')
+ }
 }

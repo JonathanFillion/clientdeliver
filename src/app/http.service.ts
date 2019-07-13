@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Product } from './classes/product';
 import { Category } from './classes/category';
 import { SubCategory } from './classes/sub-category';
-
+import { LoginForm } from './classes/login-form';
 import { HttpClient , HttpHeaders} from '@angular/common/http';
 import { Observable, of} from 'rxjs';
 import { map, catchError, tap, debounceTime } from 'rxjs/operators';
@@ -50,6 +50,25 @@ export class HttpService {
 	getSubCategoriesOfCategory(parentId: number) : Observable<SubCategory[]> {
 		return this.http.get<SubCategory[]>(this.url + "/api/subcategories/bycateg/"+parentId);
 	}
+
+	testAuth(username: String, password: String) {
+		const headers = new HttpHeaders({
+			'Content-Type': 'application/x-www-form-urlencoded'
+		});
+		console.log("Request sent")
+		const form = {username : "testtest", password: "testtest"}
+		
+
+		this.http.post(this.url+"/api/auth/signin", form, {responseType: 'text'}).subscribe(
+			data => {
+				console.log(data)
+			});
+
+
+
+
+	}
+
 
 
 }

@@ -15,7 +15,7 @@ import { AuthGaurdService } from './services/authguard-service/auth-guard.servic
 const routes: Routes = [
 	{path:'', component:IndexMainComponent},
 	{path:'products', component: ProductsMainComponent},
-  {path:'cart', component: CartMainComponent, canActivate:[AuthGaurdService]},
+  {path:'cart', component: CartMainComponent },//,canActivate:[AuthGaurdService]},
 	{path:'search/:query', component: SearchMainComponent},
   {path:'contact', component: ContactMainComponent},
   {path:'login', component: LoginMainComponent},
