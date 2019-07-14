@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../../http.service';
+import { ApiService } from '../../api.service';
 import { ProductDisplayerComponent } from '../../global/product-displayer/product-displayer.component';
 import { Product } from '../../classes/product';
 import { Category } from '../../classes/category';
@@ -20,7 +20,7 @@ export class ProductsMainComponent implements OnInit {
   selectedCategory : Category;
 
 
-  constructor(private httpService : HttpService) {
+  constructor(private httpService : ApiService) {
   }
 
   ngOnInit() {

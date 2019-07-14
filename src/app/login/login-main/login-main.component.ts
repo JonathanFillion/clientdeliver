@@ -33,6 +33,8 @@ export class LoginMainComponent implements OnInit {
     );*/
 
     this.loginservice.authenticate(this.username, this.password)
+      //this.loginservice.register()
   }
+
 
 }

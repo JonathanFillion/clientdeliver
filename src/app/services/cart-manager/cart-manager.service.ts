@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../../classes/cart-item';
-import { HttpService } from '../../http.service';
+import { ApiService } from '../../api.service';
 import { EventEmitter } from '@angular/core';
 import { Product } from '../../classes/product';
 
@@ -13,7 +13,7 @@ export class CartManagerService {
 
 	savedProducts : CartItem[] = [];
 
-  constructor(private httpService : HttpService) { }
+  constructor(private httpService : ApiService) { }
 
 
   addCartItem( qty: number, productId: number) {

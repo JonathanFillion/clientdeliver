@@ -1,6 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { Category } from '../../classes/category';
-import {HttpService} from '../../http.service';
+import {ApiService} from '../../api.service';
 
 
 @Component({
@@ -14,7 +14,7 @@ export class CategorySelectorComponent implements OnInit {
 	categories : Category[];
 	@Output() categorySelected = new EventEmitter<number>();
 
-  constructor(private httpService : HttpService) { 
+  constructor(private httpService : ApiService) { 
   	this.httpService.getCategories().subscribe((data : Category[]) => {
       this.categories = data;
     });

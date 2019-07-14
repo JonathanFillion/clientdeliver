@@ -1,5 +1,5 @@
 import { Component, OnInit,OnChanges, Output, EventEmitter, Input  } from '@angular/core';
-import {HttpService} from '../../http.service';
+import {ApiService} from '../../api.service';
 import { Category } from '../../classes/category';
 import { SubCategory } from '../../classes/sub-category';
 
@@ -15,7 +15,7 @@ export class ProductsNavigationComponent implements OnInit, OnChanges {
 	@Output() newFilter = new EventEmitter<number>();
   @Input() categoryId: number;
 
-  constructor(private httpService : HttpService) {
+  constructor(private httpService : ApiService) {
   }
 
   ngOnInit() {

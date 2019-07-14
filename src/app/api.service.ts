@@ -11,7 +11,7 @@ import { map, catchError, tap, debounceTime } from 'rxjs/operators';
 @Injectable({
 	providedIn: 'root'
 })
-export class HttpService {
+export class ApiService {
 
 	constructor(private http: HttpClient) { }
 	products : Product[]
@@ -51,24 +51,25 @@ export class HttpService {
 		return this.http.get<SubCategory[]>(this.url + "/api/subcategories/bycateg/"+parentId);
 	}
 
-	testAuth(username: String, password: String) {
-		const headers = new HttpHeaders({
-			'Content-Type': 'application/x-www-form-urlencoded'
-		});
-		console.log("Request sent")
-		const form = {username : "testtest", password: "testtest"}
+/*
+	name : String;
+	username : String;
+	email : String;
+	password : String;
+	role: String[];
+	*/
+
+	testUp() {
+
+		const form = {name: "relarelaeehhhhheasd", username : "relarehjasdashjsdjhlaeee", email:"relasdasdradssdeeela@gmmm.com" ,password: "testtesttest", role:["admin"]}
 		
-
-		this.http.post(this.url+"/api/auth/signin", form, {responseType: 'text'}).subscribe(
-			data => {
+		this.http.post<any>(this.url+"/api/auth/signup", form, {responseType: "json"}).subscribe(
+			(data: String ) => {
 				console.log(data)
-			});
-
-
-
+			}
+			)
 
 	}
-
 
 
 }

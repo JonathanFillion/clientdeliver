@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartItem } from '../../classes/cart-item';
 import { CartManagerService } from '../../services/cart-manager/cart-manager.service';
 import { Product } from '../../classes/product';
-import {HttpService} from '../../http.service';
+import {ApiService} from '../../api.service';
 import { CartDisplayerLineComponent} from '../cart-displayer-line/cart-displayer-line.component';
 import { CartTotalComponent } from '../cart-total/cart-total.component';
 
@@ -16,7 +16,7 @@ export class CartMainComponent implements OnInit {
 
   cartArray : CartItem[] = [];
 
-  constructor(private httpService : HttpService, private cartService : CartManagerService) { }
+  constructor(private httpService : ApiService, private cartService : CartManagerService) { }
 
   ngOnInit() {
   	this.cartArray = this.cartService.getCartItems();

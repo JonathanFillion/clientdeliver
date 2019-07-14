@@ -2,7 +2,7 @@
 	import { ActivatedRoute, Router } from '@angular/router';
 	import { ProductDisplayerComponent } from '../../global/product-displayer/product-displayer.component';
 	import { Product } from '../../classes/product';
-	import {HttpService} from '../../http.service';
+	import {ApiService} from '../../api.service';
 
 
 	@Component({
@@ -15,7 +15,7 @@
 
 		products : Product[] = [];
 
-		constructor(private httpService : HttpService, private activatedRoute: ActivatedRoute, private router: Router) { 
+		constructor(private httpService : ApiService, private activatedRoute: ActivatedRoute, private router: Router) { 
 		}
 
 		ngOnInit() {

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../../classes/product';
 import {ProductModalComponent} from '../product-modal/product-modal.component';
-import {HttpService } from '../../http.service';
+import {ApiService } from '../../api.service';
 
 
 @Component({
@@ -16,7 +16,7 @@ export class ProductDisplayerComponent implements OnInit {
   displayModal : boolean;
   selectedProduct : Product;
 
-  constructor(private httpService : HttpService) { 
+  constructor(private httpService : ApiService) { 
     this.displayModal = false;
   }
 
