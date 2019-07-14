@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../../services/authentication-service/authentication.service';
+import { LoginForm } from '../../classes/login-form'
+import { TokenStorageService } from '';
+
 
 @Component({
 	selector: 'app-login-main',
@@ -8,32 +11,43 @@ import { AuthenticationService } from '../../services/authentication-service/aut
 	styleUrls: ['./login-main.component.css']
 })
 export class LoginMainComponent implements OnInit {
-
+  loginForm: LoginForm;
   username = ''
   password = ''
   invalidLogin = false
+  isLoggedIn = false;
+  isLoginFailed = false;
+  errorMessage = '';
+  roles: string[] = [];
 
   constructor(private router: Router,
-    private loginservice: AuthenticationService) { }
+    private loginservice: AuthenticationService, private tokenStorage: TokenStorageService) { }
 
   ngOnInit() {
   }
 
  checkLogin() {
-/*    (this.loginservice.authenticate(this.username, this.password).subscribe(
-      data => {
-        this.router.navigate([''])
-        this.invalidLogin = false
+    this.loginForm = new LoginForm(this.username, this.password)
+    this.loginservice.authenticate(this.loginForm).subscribe(data => {
+        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveUsername(data.username);
+        this.tokenStorage.saveAuthorities(data.authorities);
+
+        this.isLoginFailed = false;
+        this.isLoggedIn = true;
+        this.roles = this.tokenStorage.getAuthorities();
+        this.reloadPage();
       },
       error => {
-        this.invalidLogin = true
-
+        console.log(error);
+        this.errorMessage = error.error.message;
+        this.isLoginFailed = true;
       }
-    )
-    );*/
+    );
+  }
 
-    this.loginservice.authenticate(this.username, this.password)
-      //this.loginservice.register()
+  reloadPage() {
+    window.location.reload();
   }
 
 

@@ -1,4 +1,6 @@
 export class JwtResponse {
-	token: String;
+	accessToken: String;
 	type: String;
+	username: String;
+	authorities: String[];
 }

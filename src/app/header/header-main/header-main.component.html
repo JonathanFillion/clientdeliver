@@ -23,7 +23,7 @@
             <a class="nav-link" routerLink="/register">Register</a>
           </li>
           <li  class="nav-item">
-            <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" routerLink="/logout">Logout</a>
+            <a *ngIf="loginService.isUserLoggedIn()" class="nav-link" (click)= "this.logout">Logout</a>
           </li>
         </ul>
       </div>
